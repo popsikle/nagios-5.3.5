@@ -12,8 +12,8 @@
   CustomLog       <%= node['nagios']['log_dir'] %>/apache_access.log combined
   ErrorLog        <%= node['nagios']['log_dir'] %>/apache_error.log
 
-  ScriptAlias /cgi-bin/<%= node['nagios']['server']['vname'] %> /usr/lib/cgi-bin/<%= node['nagios']['server']['vname'] %>
-  ScriptAlias /<%= node['nagios']['server']['vname'] %>/cgi-bin /usr/lib/cgi-bin/<%= node['nagios']['server']['vname'] %>
+  ScriptAlias /cgi-bin/<%= node['nagios']['server']['vname'] %> /usr/lib64/<%= node['nagios']['server']['vname'] %>/cgi-bin
+  ScriptAlias /<%= node['nagios']['server']['vname'] %>/cgi-bin /usr/lib64/<%= node['nagios']['server']['vname'] %>/cgi-bin
 
   Alias /stylesheets /etc/<%= node['nagios']['server']['vname'] %>/stylesheets
   Alias /<%= node['nagios']['server']['vname'] %>/stylesheets /etc/<%= node['nagios']['server']['vname'] %>/stylesheets
